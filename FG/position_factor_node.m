@@ -49,23 +49,9 @@ classdef position_factor_node < factor_node
                 out_msg = in_msg;
             % Following iterations
             else
-%                 in_msg_mat = cell2mat(in_msg');
-%                 for i=1:size(to_node,2)
-%                     % i-th sensor variance and mean calculation
-%                     temp_in_msg_mat = [in_msg_mat(1:i-1,:); in_msg_mat(i+1:end,:)]; % inbound messages except i-th one      
-%                     
-%                     % Variance calculation
-%                     temp1 = 1./temp_in_msg_mat(:,2);
-%                     out_msg{1,i}(2) = 1./(sum(temp1)); 
-% 
-%                     % Mean calculation
-%                     temp2 = temp_in_msg_mat(:,1)./temp_in_msg_mat(:,2);
-%                     out_msg{1,i}(1) = out_msg{1,i}(2)*sum(temp2);
-%                 end
-
                   in_msg_mat = cell2mat(in_msg');
                   
-                  % Variacne calculation
+                  % Variance calculation
                   temp1 = 1./in_msg_mat(:,2);
                   temp1_sum = sum(temp1);
                   
@@ -80,18 +66,6 @@ classdef position_factor_node < factor_node
                   for i=1:size(to_node,2)
                     out_msg{1,i}(1) = out_msg{1,i}(2)*(temp2_sum-(in_msg_mat(i,1)./in_msg_mat(i,2)));
                   end
-%                 for i=1:size(to_node,2)
-%                     % i-th sensor variance and mean calculation
-%                     temp_in_msg_mat = [in_msg_mat(1:i-1,:); in_msg_mat(i+1:end,:)]; % inbound messages except i-th one      
-%                     
-%                     % Variance calculation
-%                     temp1 = 1./temp_in_msg_mat(:,2);
-%                     out_msg{1,i}(2) = 1./(sum(temp1)); 
-% 
-%                     % Mean calculation
-%                     temp2 = temp_in_msg_mat(:,1)./temp_in_msg_mat(:,2);
-%                     out_msg{1,i}(1) = out_msg{1,i}(2)*sum(temp2);
-%                 end
             end
             
             % Saving messages and nodes 
