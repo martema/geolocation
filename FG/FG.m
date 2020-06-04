@@ -70,7 +70,7 @@ for targ_iter=1:locations
     var_theta = var(theta_samples,[],2);
 
     %% Factor graph
-    % Creates node
+    % Create nodes
     nodes = cell(4,N);
 
     for i=1:N
@@ -146,6 +146,7 @@ for targ_iter=1:locations
     addpoints(h,x_est(k,1),y_est(k,1));
     drawnow
     pause
+    
     end
     
     last_loc = [x_est(end,1),y_est(end,1)];
