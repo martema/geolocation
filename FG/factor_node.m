@@ -4,7 +4,7 @@ classdef factor_node < handle
 % be referenced by another object.
 % 
 % Descritpion of methods:
-%     FACTOR_NODE instantiate an factor_node object.
+%     FACTOR_NODE instantiate a factor_node object.
 %     RESET reset the factor_node object but keeps the linklist.
 %     SETUP_LINK initialize the linklist and link_id.
 %     FACTOR_FUN, an abstract function, must be defined in derived classes.
