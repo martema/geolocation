@@ -139,16 +139,18 @@ for targ_iter=1:locations
     x_est = cell2mat(x_est');
     y_est = cell2mat(y_est');
     
+    % Plot
     h = animatedline('Color','g','Marker','x','MarkerSize',11,'LineWidth',2);
     text(targets(targ_iter,1),targets(targ_iter,2),'Target')
     plot(mean0(1),mean0(2),'gx','MarkerSize',11)
+    
     for k=1:length(x_est(:,1))
     addpoints(h,x_est(k,1),y_est(k,1));
     drawnow
     pause
-    
     end
     
+    % Result collection and error
     last_loc = [x_est(end,1),y_est(end,1)];
     error(targ_iter,1) = norm(last_loc-targets(targ_iter,:));
     results{targ_iter}=[x_est;y_est];
