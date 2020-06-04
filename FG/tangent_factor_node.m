@@ -1,6 +1,5 @@
 classdef tangent_factor_node < factor_node
-    %TANGENT_FACTOR_NODE Summary of this class goes here
-    %   Detailed explanation goes here
+    %TANGENT_FACTOR_NODE
     
     properties
         mean_theta
@@ -10,7 +9,6 @@ classdef tangent_factor_node < factor_node
     methods
         function tang_FN = tangent_factor_node(id,mean_theta,var_theta)
             %TANGENT_FACTOR_NODE Construct an instance of this class
-            %   Detailed explanation goes here
             tang_FN = tang_FN@factor_node(id);
             tang_FN.mean_theta = mean_theta;
             tang_FN.var_theta = var_theta;
