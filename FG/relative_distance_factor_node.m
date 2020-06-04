@@ -1,6 +1,6 @@
 classdef relative_distance_factor_node < factor_node
-    %RELATIVE_DISTANCE_FACTOR_NODE Summary of this class goes here
-    %   Detailed explanation goes here
+    % RELATIVE_DISTANCE_FACTOR_NODE class implements the relative distance
+    % variable Node (Δx,Δy) in the TS-DOA-FG 
     
     properties
         sensor_pos_x
@@ -17,7 +17,6 @@ classdef relative_distance_factor_node < factor_node
     methods
         function dist_FN = relative_distance_factor_node(id,sensor_pos_x,sensor_pos_y,type)
             %RELATIVE_DISTANCE_FACTOR_NODE Construct an instance of this class
-            %   Detailed explanation goes here
             dist_FN = dist_FN@factor_node(id);
             dist_FN.sensor_pos_x = sensor_pos_x;
             dist_FN.sensor_pos_y = sensor_pos_y;
