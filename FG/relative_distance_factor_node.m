@@ -1,6 +1,5 @@
 classdef relative_distance_factor_node < factor_node
-    % RELATIVE_DISTANCE_FACTOR_NODE class implements the relative distance
-    % variable Node (Δx,Δy) in the TS-DOA-FG 
+    % RELATIVE_DISTANCE_FACTOR_NODE
     
     properties
         sensor_pos_x
